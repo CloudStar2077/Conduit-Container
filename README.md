@@ -1,6 +1,6 @@
 # Conduit-Container
 
-Setup a multi-container Docker Image, this includes a Django backend as well as an Angular frontend application.
+Setup a running fullstack application, this includes the Database, a Django backend as well as an Angular frontend.
 
 # Table of Contents
 
