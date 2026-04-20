@@ -38,9 +38,10 @@ DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend,YOUR_IP
  ```
 - Build docker image
 ```bash
+cd /Conduit-Container
 docker compose build
 ```  
-- Run the Container
+- Run the Container in Background
 ```bash
 docker compose up -d
 ```
