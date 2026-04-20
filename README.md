@@ -36,6 +36,9 @@ POSTGRES_PASSWORD=Your_Secure_Password
 
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend,YOUR_IP
  ```
+> [!IMPORTANT]  
+> Keep in mind not to commit your `api.config.ts` and `.env` files
+
 - Build docker image
 ```bash
 cd /Conduit-Container
@@ -45,9 +48,6 @@ docker compose build
 ```bash
 docker compose up -d
 ```
-> [!IMPORTANT]  
-> Keep in mind not to commit your .env file.
-
 - Visit the Website and Login
 
 Open a Webbroser and enter the target destination
