@@ -57,3 +57,5 @@ Open a Webbroser and enter the target destination
 
 ## Usage
 
+In this Setup multi-stage-builds are used for the Dockerfiles, this ensures that the build environment is not included in the container, this keeps the storage space smaller and makes the deployments faster.
+
