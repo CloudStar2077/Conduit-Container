@@ -12,6 +12,7 @@ Setup a running fullstack application, this includes the Database, a Django back
 
 - Docker (version 20.10 or higher) installed
 - Git installed
+- Python (version 3.6 or higher) installed
 
 ## Quickstart
 
@@ -30,7 +31,7 @@ mv example.api.config.ts api.config.ts # rename the example.api.config.ts to api
 ```
 Add your Host IP into the `api.config.ts`. In the `.env`you also need to edit some data, set the django_secret_key and Postgress_Password then add your Host IP to the Allowed_Hosts. To generate a secret_key use 
 ```bash
-python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+python -c "import secrets; print(secrets.token_urlsafe(50))"
  ``` 
 
 - Build docker image
