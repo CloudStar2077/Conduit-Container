@@ -35,7 +35,7 @@ python -c "from django.core.management.utils import get_random_secret_key; print
 
 - Build docker image
 ```bash
-cd /Conduit-Container
+cd Conduit-Container/
 docker compose build
 ```  
 - Run the Container in Background
