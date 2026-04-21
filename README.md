@@ -92,6 +92,8 @@ Open a Webbroser and enter the target destination
 You can also use the regular docker commands for building and running the containers. Change in the directory of the application you want to start and then 
 
 For example ...
+
+Build the Container
 ```bash
 docker build -t angular_frontend -f Dockerfile .
  ```
