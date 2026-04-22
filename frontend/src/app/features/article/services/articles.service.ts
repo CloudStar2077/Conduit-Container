@@ -20,7 +20,7 @@ export class ArticlesService {
     });
 
     return this.http.get<{ articles: Article[]; articlesCount: number }>(
-      `/articles${config.type === "feed" ? "/feed" : ""}`,
+      `/articles${config.type === "feed" ? "/feed/" : ""}`,
       { params },
     );
   }
