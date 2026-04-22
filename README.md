@@ -54,7 +54,7 @@ Open a Webbroser and enter the target destination
 
 In this Setup multi-stage-builds are used for the Dockerfiles, this ensures that the build environment is not included in the container, this keeps the storage space smaller and makes the deployments faster. There is a `Dockerfile` for the frontend and one for the backend. To prevent the backend from being directly accessible from the internet, which would pose a security risk, an Nginx reverse proxy is used. This acts as an intermediary, receiving incoming requests and forwarding them to the backend service. The settings for this are configured in the `nginx.conf`. For the Database there is a pre-built Docker image from the Docker Hub defined in the `docker-compose.yml`. The volume is persistent to prevent data loss. To enable the containers to communicate with each other, a network was also set up. The `entrypoint.sh` script automatically performs the Django database migrations when the container starts and then starts the server as the main process of the container. All backend package dependencies are defined in the `requirements.txt`. Since the Django development server is intended for development only and not suitable for production, Gunicorn is used as a WSGI server to efficiently handle multiple concurrent requests. The envoirement variables are stored in the `example.env`. To ignore all files that don’t belong in the container or repository, a `.dockerignore` and a `.gitignore` file are used.
 
-Clone the repository 
+- Clone the repository 
 ```bash
 git clone git@github.com:CloudStar2077/Conduit-Container.git
 cd Conduit-Container
@@ -79,7 +79,7 @@ DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend,YOUR_IP
 ```bash
 cd ../../../../../ # go back to project root
  ```
-Build and run Containers 
+- Build and run Containers 
 ```bash
 docker compose build && docker compose up -d
   ```
@@ -93,12 +93,12 @@ You can also use the regular docker commands for building and running the contai
 
 For example ...
 
-Build the Container
+- Build the Container
 ```bash
 docker build -t angular_frontend -f Dockerfile .
  ```
 
-Run the Container
+- Run the Container
 ```bash
 docker run -d \
   --name angular_frontend \
