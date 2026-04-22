@@ -45,7 +45,7 @@ docker compose up -d
 ```
 - Visit the Website and Login
 
-Open a Webbroser and enter the target destination
+Open a Webbroser and enter the destination
 ```bash
 <HostIp>:8282
  ```
@@ -85,7 +85,7 @@ docker compose build && docker compose up -d
   ```
 - Visit the Website and Login
 
-Open a Webbroser and enter the target destination
+Open a Webbroser and enter the destination
 ```bash
 <HostIp>:8282
  ```
