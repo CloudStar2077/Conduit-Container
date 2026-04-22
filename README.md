@@ -101,10 +101,10 @@ docker build -t angular_frontend -f Dockerfile .
 Run the Container
 ```bash
 docker run -d \
-  --name angular-frontend \
+  --name angular_frontend \
   -p 8282:8282 \
   --restart on-failure \
-  frontend
+  angular_frontend:latest
  ```
 
 
