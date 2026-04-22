@@ -1,28 +1,139 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
+# =========================
+# OS / Editor (Cross-platform)
+# =========================
 
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Environment files
-/.env
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
+# Linux / Unix
+*~
+.nfs*
+.Trash-*
+.cache/
 
-# TypeScript cache
-*.tsbuildinfo
+# Editors
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+
+*.pem
+*.key
+*.crt
+*.env.local
+
+# =========================
+# Angular / Node (Frontend)
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.angular/cache/
+frontend/.tmp/
+frontend/.out-tsc/
+frontend/coverage/
+
+# Optional: sensitive Angular env configs
+frontend/src/environments/environment*.ts
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Django / Python (Backend)
+# =========================
+backend/__pycache__/
+backend/**/*.py[cod]
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Django logs
+*.log
+
+# SQLite (nur dev)
+db.sqlite3
+backend/db.sqlite3
+
+# Static & media (generiert)
+backend/staticfiles/
+backend/media/
+
+# =========================
+# Django Migrations
+# =========================
+# Empfohlen: NICHT ignorieren (für Teams & Deployments)
+# Falls gewünscht:
+# **/migrations/*.py
+# !**/migrations/__init__.py
+
+# =========================
+# PostgreSQL / Database
+# =========================
+# Dumps & Backups
+*.dump
+*.backup
+
+# Optional: dedizierter Dump-Ordner
+dumps/
+
+# Docker volumes / local DB data
+postgres_data/
+pgdata/
+data/postgres/
+
+# =========================
+# Docker
+# =========================
+.docker/
+docker-data/
+docker-volumes/
+
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Optional Docker envs
+*.env.docker
+
+# =========================
+# Build / Distribution
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Misc / Temporary
+# =========================
+*.bak
+*.tmp
+*.temp
