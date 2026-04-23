@@ -5,10 +5,6 @@ services:
     restart: unless-stopped
     env_file:
       - .env
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -26,13 +22,6 @@ services:
     restart: unless-stopped
     env_file:
       - .env
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
-      DEBUG: ${DEBUG}
-      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
     depends_on:
       db:
         condition: service_healthy
