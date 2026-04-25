@@ -1,7 +1,7 @@
 # =========================
 # Builder Stage
 # =========================
-FROM python:3.5.2-slim AS builder
+FROM python:3.6-slim AS builder
 
 WORKDIR /app
 
@@ -25,7 +25,7 @@ RUN pip install --upgrade pip==20.3.4 \
 # =========================
 # Runtime Stage
 # =========================
-FROM python:3.5.2-slim
+FROM python:3.6-slim
 
 WORKDIR /app
 
