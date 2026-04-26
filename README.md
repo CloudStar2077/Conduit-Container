@@ -25,9 +25,9 @@ cd Conduit-Container
  ```
 Before building the docker image make changes to the following files.
 ```bash
-mv example.env .env  # rename the example.env to .env
+cp example.env .env  # copy the example.env to .env
 cd frontend/src/app/core/interceptors
-mv example.api.config.ts api.config.ts # rename the example.api.config.ts to api.config.ts
+cp example.api.config.ts api.config.ts # copy the example.api.config.ts to api.config.ts
 ```
 Add your Host IP into the `api.config.ts`. In the `.env`you also need to adjust some data, set the django_secret_key and Postgress_Password then add your Host IP to the Allowed_Hosts. To generate a secret_key use 
 ```bash
