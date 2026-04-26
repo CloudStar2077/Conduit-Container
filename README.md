@@ -73,7 +73,7 @@ For Example ...
 | POSTGRES_PASSWORD      | `Your_Secure_Password456!?`                     | Password for the PostgreSQL database |
 | DJANGO_ALLOWED_HOSTS   | `localhost,127.0.0.1,backend,YOUR_IP`     | List of allowed hosts for Django |
 | PORT                   | `8282`                                     | Public port exposed by the Docker container for the Angular frontend (accessible from the internet) |
-| API_BASE_URL           | `http://YOUR_IP:8282/api`           | Base URL used by the frontend to communicate with the backend API |
+| API_BASE_URL           | `http://YOUR_IP:8282/api`           | Public base URL for API requests |
 
 > [!IMPORTANT]  
 > Keep in mind not to commit your `api.config.ts` and `.env` files
