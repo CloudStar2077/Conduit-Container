@@ -25,9 +25,9 @@ cd Conduit-Container
  ```
 Before building the docker image make changes to the following files.
 ```bash
-cp example.env .env  # copy the example.env to .env
+mv example.env .env  # rename the example.env to .env
 cd frontend/src/app/core/interceptors
-cp example.api.config.ts api.config.ts # copy the example.api.config.ts to api.config.ts
+mv example.api.config.ts api.config.ts # rename the example.api.config.ts to api.config.ts
 ```
 Add your Host IP into the `api.config.ts`. In the `.env`you also need to adjust some data, set the django_secret_key and Postgress_Password then add your Host IP to the Allowed_Hosts. To generate a secret_key use 
 ```bash
@@ -59,20 +59,22 @@ In this Setup multi-stage-builds are used for the Dockerfiles, this ensures that
 git clone git@github.com:CloudStar2077/Conduit-Container.git
 cd Conduit-Container
   ```
-Rename both, the `example.env` and `example.api.config.ts` then edit them with your data
+Copy both, the `example.env` and `example.api.config.ts` then edit them with your data
 ```bash
-mv example.env .env  # rename the example.env to .env
+cp example.env .env  # copy the example.env to .env
 cd frontend/src/app/core/interceptors
-mv example.api.config.ts api.config.ts conduit-container # rename the example.api.config.ts to api.config.ts
+cp example.api.config.ts api.config.ts conduit-container # copy the example.api.config.ts to api.config.ts
  ```
-For Example ...  
-```bash
-DJANGO_SECRET_KEY='g9!qv4\$kL2@x8#pR7mZ!sw6^tF3&nH1cV5jY0uD8EA'
+For Example ... 
 
-POSTGRES_PASSWORD=Your_Secure_Password
+| Variable               | Example Value                              | Description |
+|------------------------|--------------------------------------------|------------|
+| DJANGO_SECRET_KEY      | `g9!Qv4\$KL2@x8#pR7mZ!sw6^tF3&nH1cV5jY0uD8EA` | Secret key used by Django for cryptographic signing |
+| POSTGRES_PASSWORD      | `Your_Secure_Password456!?`                     | Password for the PostgreSQL database |
+| DJANGO_ALLOWED_HOSTS   | `localhost,127.0.0.1,backend,YOUR_IP`     | List of allowed hosts for Django |
+| PORT                   | `8282`                                     | Public port exposed by the Docker container for the Angular frontend (accessible from the internet) |
+| API_BASE_URL           | `http://YOUR_IP:8282/api`           | Base URL used by the frontend to communicate with the backend API |
 
-DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend,YOUR_IP
- ```
 > [!IMPORTANT]  
 > Keep in mind not to commit your `api.config.ts` and `.env` files
 
