@@ -1,1 +1,0 @@
-export const API_BASE_URL = 'http://YOUR_HOST_IP:8282/api';

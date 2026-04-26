@@ -2,7 +2,7 @@ services:
   db:
     image: postgres:16-alpine
     container_name: postgres_db
-    restart: unless-stopped
+    restart: on-failure
     env_file:
       - .env
     volumes:
@@ -19,23 +19,23 @@ services:
   backend:
     build: ./backend
     container_name: django_backend
-    restart: unless-stopped
+    restart: on-failure
     env_file:
       - .env
     depends_on:
       db:
         condition: service_healthy
-    expose:
-      - "8000"
     networks:
       - app-network
 
   frontend:
     build: ./frontend
     container_name: angular_frontend
-    restart: unless-stopped
+    restart: on-failure
+    env_file:
+      - .env
     ports:
-      - "8282:80"
+      - "${PORT}:80"
     depends_on:
       - backend
     networks:
