@@ -29,7 +29,10 @@ services:
       - app-network
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        API_BASE_URL: ${API_BASE_URL}
     container_name: angular_frontend
     restart: on-failure
     env_file:

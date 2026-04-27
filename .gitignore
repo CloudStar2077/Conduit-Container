@@ -34,6 +34,7 @@ $RECYCLE.BIN/
 *.key
 *.crt
 *.env.local
+frontend/src/app/config/api.config.ts
 
 # =========================
 # Angular / Node (Frontend)

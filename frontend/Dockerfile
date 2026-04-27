@@ -5,8 +5,11 @@ RUN npm ci
 
 FROM node:20-alpine AS builder
 WORKDIR /app
+ARG API_BASE_URL
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+RUN sed -i "s|http://YOUR-IP:YOUR-PORT/api|${API_BASE_URL}|g" \
+    src/app/core/interceptors/api.config.ts
 RUN npm run build -- --configuration production
 
 FROM node:20-alpine AS dev
