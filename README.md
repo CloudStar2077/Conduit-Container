@@ -29,7 +29,7 @@ mv example.env .env  # rename the example.env to .env
 cd frontend/src/app/core/interceptors
 mv example.api.config.ts api.config.ts # rename the example.api.config.ts to api.config.ts
 ```
-Add your Host IP into the `api.config.ts`. In the `.env`you also need to adjust some data, set the django_secret_key and Postgress_Password then add your Host IP to the Allowed_Hosts. To generate a secret_key use 
+In the `.env` you need to adjust some data, set the django_secret_key and Postgress_Password then add your Host IP to the Allowed_Hosts and to the API_BASE_URL. To generate a secret_key use 
 ```bash
 python -c "import secrets; print(secrets.token_urlsafe(50))"
  ``` 
@@ -76,7 +76,7 @@ For Example ...
 | API_BASE_URL           | `http://YOUR_IP:8282/api`           | Public base URL for API requests |
 
 > [!IMPORTANT]  
-> Keep in mind not to commit your `api.config.ts` and `.env` files
+> Keep in mind not to commit your `.env` file
 
 ```bash
 cd ../../../../../ # go back to project root
