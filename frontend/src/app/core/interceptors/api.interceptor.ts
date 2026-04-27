@@ -14,7 +14,7 @@ export class ApiInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const apiReq = req.clone({ url: `${API_BASE_URL}${req.url}` });  # The API_BASE_URL is now injected from the environment variable set during the Docker build process
+    const apiReq = req.clone({ url: `${API_BASE_URL}${req.url}` });  #The API_BASE_URL is now injected from the .env during the Docker build process
     return next.handle(apiReq);
   }
 } 
