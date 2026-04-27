@@ -59,12 +59,13 @@ In this Setup multi-stage-builds are used for the Dockerfiles, this ensures that
 git clone git@github.com:CloudStar2077/Conduit-Container.git
 cd Conduit-Container
   ```
-Copy both, the `example.env` and `example.api.config.ts` then edit them with your data
+Copy both, the `example.env` and `example.api.config.ts` 
 ```bash
 cp example.env .env  # copy the example.env to .env
 cd frontend/src/app/core/interceptors
 cp example.api.config.ts api.config.ts conduit-container # copy the example.api.config.ts to api.config.ts
  ```
+In the `.env` you need to set your values.
 For Example ... 
 
 | Variable               | Example Value                              | Description |
